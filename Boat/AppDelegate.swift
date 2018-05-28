@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import UserNotifications
 
 /// The application delegate.
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     
+    /// Request authorization for notifications.
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { _, _ in })
+        UNUserNotificationCenter.current().delegate = self
+    }
 
     /// Reload `ViewController.browsersTableView`.
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -23,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// Open URL with default browser.
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        if UserDefaults.standard.url(forKey: "browser") != nil {
+        if defaultBrowser != nil {
             guard let openLinkViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "browser") as? OpenLinkViewController else {
                 return false
             }
@@ -35,6 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    // MARK: - User notification center delegate
+    
+    /// Open URL from notification.
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if let url = URL(string: response.notification.request.content.body) {
+            _ = application(UIApplication.shared, open: url, options: [:])
+        }
+        completionHandler()
     }
 }
 

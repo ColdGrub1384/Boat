@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		3A039A3C20BA378100283761 /* OpenLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A039A3B20BA378100283761 /* OpenLinkViewController.swift */; };
 		3A039A4120BB48B500283761 /* UIWindow+topViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A039A4020BB48B500283761 /* UIWindow+topViewController.swift */; };
+		3A039A7520BB5BD600283761 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A039A7420BB5BD600283761 /* ShareViewController.swift */; };
+		3A039A7820BB5BD600283761 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A7620BB5BD600283761 /* MainInterface.storyboard */; };
+		3A039A7C20BB5BD600283761 /* Open With Default Browser.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A039A7220BB5BD600283761 /* Open With Default Browser.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3A039A8120BB5F7B00283761 /* WebBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791C320B397AE00941CEB /* WebBrowser.swift */; };
+		3A039A8A20BB6B9100283761 /* firefox.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8620BB6B9100283761 /* firefox.jpeg */; };
+		3A039A8B20BB6B9100283761 /* chrome.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8720BB6B9100283761 /* chrome.png */; };
+		3A039A8C20BB6B9100283761 /* dolphin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8820BB6B9100283761 /* dolphin.png */; };
+		3A039A8D20BB6B9100283761 /* opera.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8920BB6B9100283761 /* opera.png */; };
 		3A8791B220B38E4100941CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791B120B38E4100941CEB /* AppDelegate.swift */; };
 		3A8791B420B38E4100941CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791B320B38E4100941CEB /* ViewController.swift */; };
 		3A8791B720B38E4100941CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8791B520B38E4100941CEB /* Main.storyboard */; };
@@ -17,6 +25,16 @@
 		3A8791C420B397AE00941CEB /* WebBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791C320B397AE00941CEB /* WebBrowser.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3A039A7A20BB5BD600283761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A8791A620B38E4100941CEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A039A7120BB5BD600283761;
+			remoteInfo = "Open With Default Browser";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		3A039A5720BB50A500283761 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -24,6 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				3A039A7C20BB5BD600283761 /* Open With Default Browser.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,8 +52,16 @@
 /* Begin PBXFileReference section */
 		3A039A3B20BA378100283761 /* OpenLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLinkViewController.swift; sourceTree = "<group>"; };
 		3A039A4020BB48B500283761 /* UIWindow+topViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+topViewController.swift"; sourceTree = "<group>"; };
-		3A039A4820BB50A500283761 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		3A039A5D20BB524D00283761 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		3A039A7220BB5BD600283761 /* Open With Default Browser.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Open With Default Browser.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A039A7420BB5BD600283761 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		3A039A7720BB5BD600283761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3A039A7920BB5BD600283761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A039A8020BB5DDA00283761 /* Boat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boat.entitlements; sourceTree = "<group>"; };
+		3A039A8220BB69EA00283761 /* Open With Default Browser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Open With Default Browser.entitlements"; sourceTree = "<group>"; };
+		3A039A8620BB6B9100283761 /* firefox.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = firefox.jpeg; sourceTree = "<group>"; };
+		3A039A8720BB6B9100283761 /* chrome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chrome.png; sourceTree = "<group>"; };
+		3A039A8820BB6B9100283761 /* dolphin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dolphin.png; sourceTree = "<group>"; };
+		3A039A8920BB6B9100283761 /* opera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = opera.png; sourceTree = "<group>"; };
 		3A8791AE20B38E4100941CEB /* Boat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8791B120B38E4100941CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A8791B320B38E4100941CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3A039A6F20BB5BD600283761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8791AB20B38E4100941CEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,16 +93,39 @@
 		3A039A4720BB50A500283761 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A039A4820BB50A500283761 /* NotificationCenter.framework */,
-				3A039A5D20BB524D00283761 /* Messages.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A039A7320BB5BD600283761 /* Open With Default Browser */ = {
+			isa = PBXGroup;
+			children = (
+				3A039A8220BB69EA00283761 /* Open With Default Browser.entitlements */,
+				3A039A7420BB5BD600283761 /* ShareViewController.swift */,
+				3A039A7620BB5BD600283761 /* MainInterface.storyboard */,
+				3A039A8520BB6B5400283761 /* Browser Icons */,
+				3A039A7920BB5BD600283761 /* Info.plist */,
+			);
+			path = "Open With Default Browser";
+			sourceTree = "<group>";
+		};
+		3A039A8520BB6B5400283761 /* Browser Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3A039A8720BB6B9100283761 /* chrome.png */,
+				3A039A8820BB6B9100283761 /* dolphin.png */,
+				3A039A8620BB6B9100283761 /* firefox.jpeg */,
+				3A039A8920BB6B9100283761 /* opera.png */,
+			);
+			path = "Browser Icons";
 			sourceTree = "<group>";
 		};
 		3A8791A520B38E4100941CEB = {
 			isa = PBXGroup;
 			children = (
+				3A8791C320B397AE00941CEB /* WebBrowser.swift */,
 				3A8791B020B38E4100941CEB /* Boat */,
+				3A039A7320BB5BD600283761 /* Open With Default Browser */,
 				3A039A4720BB50A500283761 /* Frameworks */,
 				3A8791AF20B38E4100941CEB /* Products */,
 			);
@@ -78,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				3A8791AE20B38E4100941CEB /* Boat.app */,
+				3A039A7220BB5BD600283761 /* Open With Default Browser.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,10 +143,10 @@
 		3A8791B020B38E4100941CEB /* Boat */ = {
 			isa = PBXGroup;
 			children = (
+				3A039A8020BB5DDA00283761 /* Boat.entitlements */,
 				3A8791B120B38E4100941CEB /* AppDelegate.swift */,
 				3A8791B320B38E4100941CEB /* ViewController.swift */,
 				3A039A3B20BA378100283761 /* OpenLinkViewController.swift */,
-				3A8791C320B397AE00941CEB /* WebBrowser.swift */,
 				3A039A4020BB48B500283761 /* UIWindow+topViewController.swift */,
 				3A8791B520B38E4100941CEB /* Main.storyboard */,
 				3A8791B820B38E4B00941CEB /* Assets.xcassets */,
@@ -101,6 +159,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3A039A7120BB5BD600283761 /* Open With Default Browser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A039A7D20BB5BD600283761 /* Build configuration list for PBXNativeTarget "Open With Default Browser" */;
+			buildPhases = (
+				3A039A6E20BB5BD600283761 /* Sources */,
+				3A039A6F20BB5BD600283761 /* Frameworks */,
+				3A039A7020BB5BD600283761 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Open With Default Browser";
+			productName = "Open With Default Browser";
+			productReference = 3A039A7220BB5BD600283761 /* Open With Default Browser.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3A8791AD20B38E4100941CEB /* Boat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A8791C020B38E4B00941CEB /* Build configuration list for PBXNativeTarget "Boat" */;
@@ -113,6 +188,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3A039A7B20BB5BD600283761 /* PBXTargetDependency */,
 			);
 			name = Boat;
 			productName = Boat;
@@ -129,8 +205,21 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Adrian;
 				TargetAttributes = {
+					3A039A7120BB5BD600283761 = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					3A8791AD20B38E4100941CEB = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -148,11 +237,24 @@
 			projectRoot = "";
 			targets = (
 				3A8791AD20B38E4100941CEB /* Boat */,
+				3A039A7120BB5BD600283761 /* Open With Default Browser */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3A039A7020BB5BD600283761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A039A8C20BB6B9100283761 /* dolphin.png in Resources */,
+				3A039A8B20BB6B9100283761 /* chrome.png in Resources */,
+				3A039A7820BB5BD600283761 /* MainInterface.storyboard in Resources */,
+				3A039A8D20BB6B9100283761 /* opera.png in Resources */,
+				3A039A8A20BB6B9100283761 /* firefox.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8791AC20B38E4100941CEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +268,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3A039A6E20BB5BD600283761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A039A7520BB5BD600283761 /* ShareViewController.swift in Sources */,
+				3A039A8120BB5F7B00283761 /* WebBrowser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A8791AA20B38E4100941CEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,7 +291,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3A039A7B20BB5BD600283761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A039A7120BB5BD600283761 /* Open With Default Browser */;
+			targetProxy = 3A039A7A20BB5BD600283761 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		3A039A7620BB5BD600283761 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A039A7720BB5BD600283761 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		3A8791B520B38E4100941CEB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -200,6 +327,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A039A7E20BB5BD600283761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Open With Default Browser/Open With Default Browser.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y96PL6G497;
+				INFOPLIST_FILE = "Open With Default Browser/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.marcela.ada.Boat.Open-With-Default-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A039A7F20BB5BD600283761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Open With Default Browser/Open With Default Browser.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y96PL6G497;
+				INFOPLIST_FILE = "Open With Default Browser/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.marcela.ada.Boat.Open-With-Default-Browser";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		3A8791BE20B38E4B00941CEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,7 +484,9 @@
 		3A8791C120B38E4B00941CEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Boat/Boat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y96PL6G497;
 				INFOPLIST_FILE = Boat/Info.plist;
@@ -335,7 +504,9 @@
 		3A8791C220B38E4B00941CEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Boat/Boat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y96PL6G497;
 				INFOPLIST_FILE = Boat/Info.plist;
@@ -353,6 +524,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3A039A7D20BB5BD600283761 /* Build configuration list for PBXNativeTarget "Open With Default Browser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A039A7E20BB5BD600283761 /* Debug */,
+				3A039A7F20BB5BD600283761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3A8791A920B38E4100941CEB /* Build configuration list for PBXProject "Boat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

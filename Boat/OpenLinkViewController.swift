@@ -63,7 +63,7 @@ class OpenLinkViewController: UIViewController {
         openButton.clipsToBounds = true
         
         var browserIcon: UIImage?
-        switch UserDefaults.standard.url(forKey: "browser") {
+        switch defaultBrowser?.urlScheme {
         case kChrome.urlScheme: // Chrome
             browserIcon = #imageLiteral(resourceName: "chrome")
             browserName = "Chrome"

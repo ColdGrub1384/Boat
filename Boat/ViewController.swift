@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     /// Open the URL entered by the user.
     @IBAction func go(_ sender: Any) {
-        if UserDefaults.standard.url(forKey: "browser") != nil {
+        if defaultBrowser != nil {
             
             guard let text = textField.text else {
                 print("Cannot get `textField` text!")
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell?.contentView.alpha = 1
         }
         
-        if let url = UserDefaults.standard.url(forKey: "browser"), browser?.urlScheme == url {
+        if let url = defaultBrowser?.urlScheme, browser?.urlScheme == url {
             cell?.accessoryType = .checkmark
         } else {
             cell?.accessoryType = .none
@@ -164,8 +164,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            UserDefaults.standard.set(nil, forKey: "browser")
-            UserDefaults.standard.synchronize()
+            defaultBrowser = nil
             tableView.reloadData()
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
             return
@@ -185,8 +184,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             } else {
                 // Set default browser
-                UserDefaults.standard.set(url, forKey: "browser")
-                UserDefaults.standard.synchronize()
+                defaultBrowser = WebBrowser(urlScheme: url, appStoreID: "")
                 tableView.reloadData()
             }
         }

@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Browser"; ObjectID = "20Q-lh-JMV"; */
+"20Q-lh-JMV.text" = "网页浏览器";
+
+/* Class = "UIButton"; normalTitle = "Go"; ObjectID = "PmS-5j-BAX"; */
+"PmS-5j-BAX.normalTitle" = "走";
+
+/* Class = "UILabel"; text = "Open link"; ObjectID = "TVr-zv-HgU"; */
+"TVr-zv-HgU.text" = "打开链接";
+
+/* Class = "UITextField"; placeholder = "Search or enter an URL"; ObjectID = "Zle-xr-KXZ"; */
+"Zle-xr-KXZ.placeholder" = "搜索或输入一个URL";
+
+/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "yoM-Tl-cZL"; */
+"yoM-Tl-cZL.normalTitle" = "打开";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zgd-W2-Efn"; */
+"zgd-W2-Efn.normalTitle" = "取消";

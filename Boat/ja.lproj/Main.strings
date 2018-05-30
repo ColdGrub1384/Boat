@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Browser"; ObjectID = "20Q-lh-JMV"; */
+"20Q-lh-JMV.text" = "ウェブブラウザ";
+
+/* Class = "UIButton"; normalTitle = "Go"; ObjectID = "PmS-5j-BAX"; */
+"PmS-5j-BAX.normalTitle" = "行こう";
+
+/* Class = "UILabel"; text = "Open link"; ObjectID = "TVr-zv-HgU"; */
+"TVr-zv-HgU.text" = "リンクを開く";
+
+/* Class = "UITextField"; placeholder = "Search or enter an URL"; ObjectID = "Zle-xr-KXZ"; */
+"Zle-xr-KXZ.placeholder" = "検索またはURLを入力";
+
+/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "yoM-Tl-cZL"; */
+"yoM-Tl-cZL.normalTitle" = "で開く";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zgd-W2-Efn"; */
+"zgd-W2-Efn.normalTitle" = "キャンセル";

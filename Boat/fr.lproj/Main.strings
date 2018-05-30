@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Browser"; ObjectID = "20Q-lh-JMV"; */
+"20Q-lh-JMV.text" = "Naviguateur";
+
+/* Class = "UIButton"; normalTitle = "Go"; ObjectID = "PmS-5j-BAX"; */
+"PmS-5j-BAX.normalTitle" = "Aller";
+
+/* Class = "UILabel"; text = "Open link"; ObjectID = "TVr-zv-HgU"; */
+"TVr-zv-HgU.text" = "Ouvrir un lien";
+
+/* Class = "UITextField"; placeholder = "Search with Google or enter an URL"; ObjectID = "Zle-xr-KXZ"; */
+"Zle-xr-KXZ.placeholder" = "Rechercher ou entrer une URL";
+
+/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "yoM-Tl-cZL"; */
+"yoM-Tl-cZL.normalTitle" = "Ouvrir dans";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zgd-W2-Efn"; */
+"zgd-W2-Efn.normalTitle" = "Annuler";

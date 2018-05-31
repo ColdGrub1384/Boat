@@ -32,7 +32,7 @@ class OpenLinkViewController: UIViewController {
                 self.dismiss(animated: true, completion: {
                     if !success {
                         (UIApplication.shared.keyWindow?.rootViewController as? ViewController)?.textField.text = url.absoluteString
-                        let alert = UIAlertController(title: "Error opening URL!", message: "It looks like \(self.browserName) is not installed.", preferredStyle: .alert)
+                        let alert = UIAlertController(title: Localizable.errorOpeningURL, message: Localizable.browserNotInstalled(self.browserName), preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
                     }
@@ -81,7 +81,7 @@ class OpenLinkViewController: UIViewController {
         }
         
         iconView.image = browserIcon
-        openButton.setTitle("Open In \(browserName)", for: .normal)
+        openButton.setTitle("\(openButton.title(for: .normal) ?? "Open In") \(browserName)", for: .normal)
         urlLabel.text = url?.absoluteString
     }
 }

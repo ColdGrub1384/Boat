@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Boat
+
+  Created by Adrian on 30.05.18.
+  Copyright © 2018 Adrian. All rights reserved.
+*/
+
+"Invalid URL!" = "URL inválido!";
+"Please enable notifications alerts from settings." = "Por favor, active las alertas de las notificaciones desde los ajustes.";
+"Open in %@" = "Abrir en %@";

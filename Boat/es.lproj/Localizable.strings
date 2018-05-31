@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Boat
+
+  Created by Adrian on 29.05.18.
+  Copyright © 2018 Adrian. All rights reserved.
+*/
+
+"Default Web Browser" = "Navegador Web por defecto";
+"Error opening URL!" = "Error abriendo URL!";
+"It looks like %@ is not installed." = "Parece que %@ no esta instalado.";

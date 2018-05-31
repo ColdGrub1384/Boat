@@ -40,20 +40,20 @@ class ShareViewController: UIViewController {
         }
         
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "Open In Boat"
+        notificationContent.title = Localizable.openIn("Boat")
         if let defaultBrowser = defaultBrowser {
             switch defaultBrowser.urlScheme {
             case kChrome.urlScheme:
-                notificationContent.title = "Open In Chrome"
+                notificationContent.title = Localizable.openIn("Chrome")
                 set(notification: notificationContent, icon: "chrome.png")
             case kDolphin.urlScheme:
-                notificationContent.title = "Open In Dolphin"
+                notificationContent.title = Localizable.openIn("Dolphin")
                 set(notification: notificationContent, icon: "dolphin.png")
             case kFirefox.urlScheme:
-                notificationContent.title = "Open In Firefox"
+                notificationContent.title = Localizable.openIn("Firefox")
                 set(notification: notificationContent, icon: "firefox.jpeg")
             case kOpera.urlScheme:
-                notificationContent.title = "Open In Opera"
+                notificationContent.title = Localizable.openIn("Opera")
                 set(notification: notificationContent, icon: "opera.jpeg")
             default:
                 break
@@ -76,7 +76,7 @@ class ShareViewController: UIViewController {
                 self.doneButton.isHidden = false
                 self.activityIndicator.isHidden = true
                 self.messageLabel.isHidden = false
-                self.messageLabel.text = "Please enable notifications banner from settings."
+                self.messageLabel.text = Localizable.enableNotificationsAlert
                 return
             }
         }
@@ -128,7 +128,7 @@ class ShareViewController: UIViewController {
                     self.doneButton.isHidden = false
                     self.activityIndicator.isHidden = true
                     self.messageLabel.isHidden = false
-                    self.messageLabel.text = "Invalid URL!"
+                    self.messageLabel.text = Localizable.invalidURL
                 }
             }
         }

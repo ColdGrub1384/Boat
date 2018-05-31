@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Boat
+
+  Created by Adrian on 29.05.18.
+  Copyright © 2018 Adrian. All rights reserved.
+*/
+
+"Default Web Browser" = "默认Web浏览器";
+"Error opening URL!" = "打开网址时出错！";
+"It looks like %@ is not installed." = "它看起来没有安装%@。";

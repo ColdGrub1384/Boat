@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import SafariServices
 
 /// Main View Controller.
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SKStoreProductViewControllerDelegate, UITextFieldDelegate {
@@ -27,32 +28,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     /// Open the URL entered by the user.
     @IBAction func go(_ sender: Any) {
-        if defaultBrowser != nil {
-            
-            guard let text = textField.text else {
-                print("Cannot get `textField` text!")
-                return
-            }
-            
-            guard let openLinkViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "browser") as? OpenLinkViewController else {
-                return
-            }
-            
-            if let url = URL(string: text), let scheme = url.scheme, scheme == "http" || scheme == "https" { // Is http or https URL
+        
+        guard let openLinkViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "browser") as? OpenLinkViewController else {
+            return
+        }
+        
+        guard let text = textField.text else {
+            print("Cannot get `textField` text!")
+            return
+        }
+        
+        func openURL(_ url: URL) {
+            if defaultBrowser != nil {
                 openLinkViewController.url = url
                 present(openLinkViewController, animated: true, completion: nil)
-            } else if let url = URL(string: text), let urlWithScheme = URL(string: "http://"+text), (url.scheme == nil || url.scheme == "") && url.absoluteString.contains(".") { // Can be an URL with http or https
-                openLinkViewController.url = urlWithScheme
-                present(openLinkViewController, animated: true, completion: nil)
-            } else if let googleURL = URL(string: "https://www.google.com/search?q="+(text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Cannot%20Encode%20Search")) { // Not an URL, search with Google
-                openLinkViewController.url = googleURL
-                present(openLinkViewController, animated: true, completion: nil)
+            } else {
+                let safari = SFSafariViewController(url: url)
+                safari.dismissButtonStyle = .done
+                present(safari, animated: true, completion: nil)
             }
-            
-        } else {
-            let alert = UIAlertController(title: "Can't open URL!", message: "Please select a web browser above.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+        }
+        
+        if let url = URL(string: text), let scheme = url.scheme, scheme == "http" || scheme == "https" { // Is http or https URL
+            openURL(url)
+        } else if let url = URL(string: text), let urlWithScheme = URL(string: "http://"+text), (url.scheme == nil || url.scheme == "") && url.absoluteString.contains(".") { // Can be an URL with http or https
+            openURL(urlWithScheme)
+        } else if let googleURL = URL(string: "https://www.google.com/search?q="+(text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Cannot%20Encode%20Search")) { // Not an URL, search with Google
+            openURL(googleURL)
         }
         
         textField.resignFirstResponder()
@@ -81,7 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     /// - Returns: `"Default browser"`.
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Default browser"
+        return Localizable.defaultWebBrowser
     }
     
     /// Configure the cell.

@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import SafariServices
 
 /// The application delegate.
 @UIApplicationMain
@@ -37,7 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             openLinkViewController.url = url
             UIApplication.shared.keyWindow?.topViewController?.present(openLinkViewController, animated: true, completion: nil)
         } else {
-            (app.keyWindow?.rootViewController as? ViewController)?.textField.text = url.absoluteString
+            let safari = SFSafariViewController(url: url)
+            safari.dismissButtonStyle = .done
+            UIApplication.shared.keyWindow?.topViewController?.present(safari, animated: true, completion: nil)
         }
         
         return true

@@ -20,6 +20,6 @@ class Localizable {
     
     /// `"Open in %@"`.
     static func openIn(_ browser: String) -> String {
-        return NSString(format: NSLocalizedString("Open in", comment: "") as NSString, browser) as String
+        return NSString(format: NSLocalizedString("Open in %@", comment: "") as NSString, browser) as String
     }
 }

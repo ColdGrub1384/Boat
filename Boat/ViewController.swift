@@ -13,6 +13,13 @@ import SafariServices
 /// Main View Controller.
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SKStoreProductViewControllerDelegate, UITextFieldDelegate {
     
+    /// Installs the profile for disabling safari.
+    @IBAction func disableSafari(_ sender: Any) {
+        let safari = SFSafariViewController(url: URL(string: "http://186.156.148.36/Boat/DisableSafari.mobileconfig")!)
+        safari.dismissButtonStyle = .done
+        present(safari, animated: true, completion: nil)
+    }
+    
     // MARK: - Cells
     
     let chromeIndexPath = IndexPath(row: 0, section: 0)
@@ -203,6 +210,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Text field delegate
     
+    /// Go.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         go(textField)

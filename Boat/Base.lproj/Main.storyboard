@@ -96,6 +96,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZGH-yx-Xhq">
                                 <rect key="frame" x="0.0" y="136" width="375" height="642"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dYt-W9-Z8K">
+                                    <rect key="frame" x="0.0" y="91" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Disable Safari"/>
+                                    <connections>
+                                        <action selector="disableSafari:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7Q-0u-H2c"/>
+                                    </connections>
+                                </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="browser" rowHeight="63" id="yDr-vv-56f">
                                         <rect key="frame" x="0.0" y="28" width="375" height="63"/>
@@ -113,7 +121,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20Q-lh-JMV">
-                                                    <rect key="frame" x="73" y="-1" width="732" height="65"/>
+                                                    <rect key="frame" x="73" y="-1" width="295" height="65"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

@@ -5,6 +5,9 @@
 /* Class = "UIButton"; normalTitle = "Go"; ObjectID = "PmS-5j-BAX"; */
 "PmS-5j-BAX.normalTitle" = "Ir";
 
+/* Class = "UIButton"; normalTitle = "Disable Safari"; ObjectID = "dYt-W9-Z8K"; */
+"dYt-W9-Z8K.normalTitle" = "Desativar o Safari";
+
 /* Class = "UILabel"; text = "Open link"; ObjectID = "TVr-zv-HgU"; */
 "TVr-zv-HgU.text" = "Abra um link";
 

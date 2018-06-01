@@ -19,3 +19,6 @@
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zgd-W2-Efn"; */
 "zgd-W2-Efn.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "sGO-mn-Pye"; */
+"sGO-mn-Pye.normalTitle" = "Share";

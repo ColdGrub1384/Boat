@@ -9,3 +9,4 @@
 "Default Web Browser" = "デフォルトWebブラウザ";
 "Error opening URL!" = "URLを開く際のエラー！";
 "It looks like %@ is not installed." = "%@がインストールされていないようです。";
+"Open in" = "%@で開く";

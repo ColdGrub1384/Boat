@@ -9,3 +9,4 @@
 "Default Web Browser" = "Standard-Webbrowser";
 "Error opening URL!" = "Fehler beim Öffnen der URL!";
 "It looks like %@ is not installed." = "Es scheint, dass %@ nicht installiert ist.";
+"Open in" = "In %@ öffnen";

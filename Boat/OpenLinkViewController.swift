@@ -25,6 +25,14 @@ class OpenLinkViewController: UIViewController {
     /// The label used to display the URL
     @IBOutlet weak var urlLabel: UILabel!
     
+    /// Share URL.
+    @IBAction func shareURL(_ sender: Any) {
+        if let url = url {
+            let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: [])
+            present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
     /// Open the URL.
     @IBAction func openURL(_ sender: Any) {
         if let url = url {
@@ -57,7 +65,7 @@ class OpenLinkViewController: UIViewController {
         iconView.clipsToBounds = true
         iconView.layer.borderWidth = 0.5
         iconView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        iconView.layer.cornerRadius = 32
+        iconView.layer.cornerRadius = 12
         
         openButton.layer.cornerRadius = 6
         openButton.clipsToBounds = true
@@ -81,7 +89,7 @@ class OpenLinkViewController: UIViewController {
         }
         
         iconView.image = browserIcon
-        openButton.setTitle("\(openButton.title(for: .normal) ?? "Open In") \(browserName)", for: .normal)
+        openButton.setTitle(Localizable.openIn(browserName), for: .normal)
         urlLabel.text = url?.absoluteString
     }
 }

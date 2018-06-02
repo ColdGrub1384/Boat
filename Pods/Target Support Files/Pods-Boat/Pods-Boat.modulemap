@@ -1,0 +1,6 @@
+framework module Pods_Boat {
+  umbrella header "Pods-Boat-umbrella.h"
+
+  export *
+  module * { export * }
+}

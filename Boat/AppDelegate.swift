@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import SafariServices
+import GoogleMobileAds
 
 /// The application delegate.
 @UIApplicationMain
@@ -16,8 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
     
-    /// Request authorization for notifications.
+    /// Request authorization for notifications and setup ads.
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-9214899206650515~2912719596")
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { _, _ in })
         UNUserNotificationCenter.current().delegate = self
     }

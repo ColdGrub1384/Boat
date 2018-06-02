@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import GoogleMobileAds
 
 /// View controller used to open an URL with the default browser.
 class OpenLinkViewController: UIViewController {
@@ -16,6 +17,9 @@ class OpenLinkViewController: UIViewController {
     var url: URL?
         
     private var browserName = ""
+    
+    /// Banner view placed at the bottom of `view`.
+    var bannerView: GADBannerView!
     
     /// Icon of the browser.
     @IBOutlet weak var iconView: UIImageView!
@@ -111,7 +115,46 @@ class OpenLinkViewController: UIViewController {
         })
     }
     
+    /// Add given banner view to `view` with constraints.
+    ///
+    /// - Parameters:
+    ///     - bannerView: Banner view to add.
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: view.safeAreaLayoutGuide,
+                                attribute: .bottom,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+    
     // MARK: - View controller
+    
+    /// Show ad.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(bannerView)
+        
+        bannerView.backgroundColor = .red
+        
+        bannerView.adUnitID = "ca-app-pub-9214899206650515/2565783971"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
     
     /// Setup views.
     override func viewDidAppear(_ animated: Bool) {

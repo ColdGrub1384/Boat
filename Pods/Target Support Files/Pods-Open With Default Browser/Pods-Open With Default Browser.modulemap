@@ -1,0 +1,6 @@
+framework module Pods_Open_With_Default_Browser {
+  umbrella header "Pods-Open With Default Browser-umbrella.h"
+
+  export *
+  module * { export * }
+}

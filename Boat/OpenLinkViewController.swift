@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 /// View controller used to open an URL with the default browser.
 class OpenLinkViewController: UIViewController {
@@ -24,6 +25,63 @@ class OpenLinkViewController: UIViewController {
     
     /// The label used to display the URL
     @IBOutlet weak var urlLabel: UILabel!
+    
+    /// Choose another web browser.
+    @IBAction func openIn(_ sender: Any) {
+        
+        let app = UIApplication.shared
+        
+        guard let url = url else {
+            return
+        }
+        
+        let defaultBrowser_ = defaultBrowser
+        
+        let actionSheet = UIAlertController(title: Localizable.chooseWebBrowser, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Safari", style: .default, handler: { (_) in
+            self.dismiss(animated: true, completion: {
+                let safari = SFSafariViewController(url: url)
+                safari.dismissButtonStyle = .done
+                app.keyWindow?.topViewController?.present(safari, animated: true, completion: nil)
+            })
+        }))
+        
+        if app.canOpenURL(kChrome.urlScheme) {
+            actionSheet.addAction(UIAlertAction(title: "Chrome", style: .default, handler: { (_) in
+                defaultBrowser = kChrome
+                self.openURL(self)
+                defaultBrowser = defaultBrowser_
+            }))
+        }
+        
+        if app.canOpenURL(kDolphin.urlScheme) {
+            actionSheet.addAction(UIAlertAction(title: "Dolphin", style: .default, handler: { (_) in
+                defaultBrowser = kDolphin
+                self.openURL(self)
+                defaultBrowser = defaultBrowser_
+            }))
+        }
+        
+        if app.canOpenURL(kEdge.urlScheme) {
+            actionSheet.addAction(UIAlertAction(title: "Edge", style: .default, handler: { (_) in
+                defaultBrowser = kEdge
+                self.openURL(self)
+                defaultBrowser = defaultBrowser_
+            }))
+        }
+        
+        if app.canOpenURL(kFirefox.urlScheme) {
+            actionSheet.addAction(UIAlertAction(title: "Firefox", style: .default, handler: { (_) in
+                defaultBrowser = kFirefox
+                self.openURL(self)
+                defaultBrowser = defaultBrowser_
+            }))
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: Localizable.cancel, style: .cancel, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
     
     /// Share URL.
     @IBAction func shareURL(_ sender: Any) {

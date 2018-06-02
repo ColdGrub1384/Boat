@@ -11,3 +11,5 @@
 "It looks like %@ is not installed." = "它看起來沒有安裝%@。";
 "Open in" = "在%@中打開";
 "OK" = "好";
+"Cancel" = "取消";
+"Choose a Web browser" = "選擇一個Web瀏覽器";

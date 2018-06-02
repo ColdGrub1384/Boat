@@ -22,3 +22,6 @@
 
 /* Class = "UIButton"; normalTitle = "Share"; ObjectID = "sGO-mn-Pye"; */
 "sGO-mn-Pye.normalTitle" = "Condividere";
+
+/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "1qv-eu-Ks3"; */
+"1qv-eu-Ks3.normalTitle" = "Apri in";

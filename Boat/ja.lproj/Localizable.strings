@@ -11,3 +11,5 @@
 "It looks like %@ is not installed." = "%@がインストールされていないようです。";
 "Open in" = "%@で開く";
 "OK" = "OK";
+"Cancel" = "キャンセル";
+"Choose a Web browser" = "Webブラウザを選択する";

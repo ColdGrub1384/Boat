@@ -11,3 +11,5 @@
 "It looks like %@ is not installed." = "Sembra che %@ non sia installato.";
 "Open in %@" = "Apri in %@";
 "OK" = "Ok";
+"Cancel" = "Annulla";
+"Choose a Web browser" = "Scegli un browser Web";

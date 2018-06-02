@@ -26,6 +26,16 @@ class Localizable {
     static var ok: String {
         return NSLocalizedString("OK", comment: "")
     }
+    
+    /// `"Choose a Web browser"`.
+    static var chooseWebBrowser: String {
+        return NSLocalizedString("Choose a Web browser", comment: "")
+    }
+    
+    /// `"Cancel"`.
+    static var cancel: String {
+        return NSLocalizedString("Cancel", comment: "")
+    }
         
     /// `"It looks like %@ is not installed."`.
     static func browserNotInstalled(_ browser: String) -> String {

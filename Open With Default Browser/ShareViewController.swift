@@ -62,7 +62,9 @@ class ShareViewController: UIViewController {
         notificationContent.body = url.absoluteString
         
         let request = UNNotificationRequest(identifier: "openURL", content: notificationContent, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false))
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { _ in
+            self.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+        })
     }
     
     // MARK: - View controller
@@ -81,55 +83,47 @@ class ShareViewController: UIViewController {
             }
         }
         
-        guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
+        func complete() {
             extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+        }
+        
+        guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
+            complete()
             return
         }
         
-        var isValid = false
-        var wasLoaded = false
+        if items.count == 0 {
+            complete()
+            return
+        }
+        
         for item in items {
             if let itemProviders = item.attachments as? [NSItemProvider] {
                 for itemProvider in itemProviders {
                     if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeText as String) {
                         itemProvider.loadItem(forTypeIdentifier: kUTTypeText as String, options: nil) { (data, _) in
-                            wasLoaded = true
                             if let string = data as? String, let url = URL(string: string), url.scheme == "http" || url.scheme == "https" {
-                                isValid = true
                                 self.sendNotification(withURL: url)
+                            } else if let string = data as? String, let encoded = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: "https://www.google.com/search?q="+encoded) {
+                                self.sendNotification(withURL: url)
+                            } else {
+                                complete()
                             }
                         }
                     } else if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
                         itemProvider.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { (data, _) in
-                            wasLoaded = true
                             if let url = data as? URL, url.scheme == "http" || url.scheme == "https" {
-                                isValid = true
                                 self.sendNotification(withURL: url)
+                            } else {
+                                complete()
                             }
                         }
                     } else {
-                        wasLoaded = true
+                        complete()
                     }
                 }
             } else {
-                wasLoaded = true
-            }
-        }
-        
-        DispatchQueue.global(qos: .background).async {
-            while !wasLoaded {
-                sleep(UInt32(0.1))
-            }
-            
-            DispatchQueue.main.async {
-                if isValid {
-                    self.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
-                } else {
-                    self.doneButton.isHidden = false
-                    self.activityIndicator.isHidden = true
-                    self.messageLabel.isHidden = false
-                    self.messageLabel.text = Localizable.invalidURL
-                }
+                complete()
             }
         }
     }

@@ -51,9 +51,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         func openURL(_ url: URL) {
             if defaultBrowser != nil {
+                textField.text = ""
                 openLinkViewController.url = url
                 present(openLinkViewController, animated: true, completion: nil)
             } else {
+                textField.text = ""
                 let safari = SFSafariViewController(url: url)
                 safari.dismissButtonStyle = .done
                 present(safari, animated: true, completion: nil)
@@ -62,6 +64,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if let url = URL(string: text), let scheme = url.scheme, scheme == "http" || scheme == "https" { // Is http or https URL
             openURL(url)
+        } else if let url = URL(string: text), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:]) { (success) in
+                if success {
+                    self.textField.text = ""
+                }
+            }
         } else if let url = URL(string: text), let urlWithScheme = URL(string: "http://"+text), (url.scheme == nil || url.scheme == "") && url.absoluteString.contains(".") { // Can be an URL with http or https
             openURL(urlWithScheme)
         } else if let googleURL = URL(string: "https://www.google.com/search?q="+(text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "Cannot%20Encode%20Search")) { // Not an URL, search with Google
@@ -69,11 +77,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         textField.resignFirstResponder()
-    }
-    
-    /// Enable or disable `goButton`.
-    @IBAction func textFieldDidChange(_ textField: UITextField) {
-        goButton.isEnabled = (textField.text != "")
     }
     
     // MARK: - View controller
@@ -223,6 +226,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         viewController.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - Text field
+    
+    /// Enable or disable `goButton`.
+    @IBAction func textFieldDidChange(_ textField: UITextField) {
+        goButton.isEnabled = (textField.text != "")
+    }
+    
     // MARK: - Text field delegate
     
     /// Go.
@@ -230,6 +240,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         textField.resignFirstResponder()
         go(textField)
         return true
+    }
+    
+    /// Select all.
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
     }
 }
 

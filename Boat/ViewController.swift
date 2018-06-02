@@ -31,6 +31,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     /// Text field for putting an URL or search with Google.
     @IBOutlet weak var textField: UITextField!
     
+    /// Button for `go(_:)`.
+    @IBOutlet weak var goButton: UIButton!
+    
     /// Table view containing web browsers.
     @IBOutlet weak var browsersTableView: UITableView!
     
@@ -66,6 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         textField.resignFirstResponder()
+    }
+    
+    /// Enable or disable `goButton`.
+    @IBAction func textFieldDidChange(_ textField: UITextField) {
+        goButton.isEnabled = (textField.text != "")
     }
     
     // MARK: - View controller

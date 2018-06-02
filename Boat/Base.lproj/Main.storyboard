@@ -153,10 +153,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="webSearch" returnKeyType="go"/>
                                 <connections>
+                                    <action selector="textFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="4bu-8Y-YCk"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NFy-wX-3pr"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmS-5j-BAX">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmS-5j-BAX">
                                 <rect key="frame" x="321" y="97" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="qe8-02-5XA"/>
@@ -195,6 +196,7 @@
                     </view>
                     <connections>
                         <outlet property="browsersTableView" destination="ZGH-yx-Xhq" id="sSc-Xf-9nw"/>
+                        <outlet property="goButton" destination="PmS-5j-BAX" id="pQh-9l-i5I"/>
                         <outlet property="textField" destination="Zle-xr-KXZ" id="NFq-L9-50l"/>
                     </connections>
                 </viewController>

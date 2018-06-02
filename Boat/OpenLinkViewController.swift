@@ -23,9 +23,6 @@ class OpenLinkViewController: UIViewController {
     /// The button to open the URL.
     @IBOutlet weak var openButton: UIButton!
     
-    /// The label used to display the URL
-    @IBOutlet weak var urlLabel: UILabel!
-    
     /// Choose another web browser.
     @IBAction func openIn(_ sender: Any) {
         
@@ -151,6 +148,5 @@ class OpenLinkViewController: UIViewController {
         
         iconView.image = browserIcon
         openButton.setTitle(Localizable.openIn(browserName), for: .normal)
-        urlLabel.text = url?.absoluteString
     }
 }

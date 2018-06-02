@@ -5,6 +5,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>opera-http</string>
+		<string>microsoft-edge-http</string>
 		<string>dolphin</string>
 		<string>googlechrome</string>
 		<string>firefox</string>

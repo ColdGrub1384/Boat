@@ -24,8 +24,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let chromeIndexPath = IndexPath(row: 0, section: 0)
     let dolphinIndexPath = IndexPath(row: 1, section: 0)
-    let firefoxIndexPath = IndexPath(row: 2, section: 0)
-    let operaIndexPath = IndexPath(row: 3, section: 0)
+    let edgeIndexPath = IndexPath(row: 2, section: 0)
+    let firefoxIndexPath = IndexPath(row: 3, section: 0)
+    let operaIndexPath = IndexPath(row: 4, section: 0)
         
     /// Text field for putting an URL or search with Google.
     @IBOutlet weak var textField: UITextField!
@@ -83,9 +84,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Table view data source
     
-    /// - Returns: `3`.
+    /// - Returns: `4`.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     /// - Returns: `"Default browser"`.
@@ -102,20 +103,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var browser: WebBrowser?
         var browserIcon: UIImage?
         var browserName: String?
-        switch indexPath.row {
-        case chromeIndexPath.row: // Chrome
+        switch indexPath {
+        case chromeIndexPath: // Chrome
             browser = kChrome
             browserIcon = #imageLiteral(resourceName: "chrome")
             browserName = "Chrome"
-        case dolphinIndexPath.row: // Dolphin
+        case dolphinIndexPath: // Dolphin
             browser = kDolphin
             browserIcon = #imageLiteral(resourceName: "dolphin")
             browserName = "Dolphin"
-        case firefoxIndexPath.row: // Firefox
+        case edgeIndexPath: // Edge
+            browser = kEdge
+            browserIcon = #imageLiteral(resourceName: "edge")
+            browserName = "Edge"
+        case firefoxIndexPath: // Firefox
             browser = kFirefox
             browserIcon = #imageLiteral(resourceName: "firefox")
             browserName = "Firefox"
-        case operaIndexPath.row: // Opera
+        case operaIndexPath: // Opera
             browser = kOpera
             browserIcon = #imageLiteral(resourceName: "opera")
             browserName = "Opera"
@@ -159,14 +164,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     /// Select cell.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var browser: WebBrowser?
-        switch indexPath.row {
-        case 0: // Chrome
+        switch indexPath {
+        case chromeIndexPath: // Chrome
             browser = kChrome
-        case 1: // Dolphin
+        case dolphinIndexPath: // Dolphin
             browser = kDolphin
-        case 2: // Firefox
+        case edgeIndexPath:
+            browser = kEdge
+        case firefoxIndexPath: // Firefox
             browser = kFirefox
-        case 3: // Opera
+        case operaIndexPath: // Opera
             browser = kOpera
         default:
             break

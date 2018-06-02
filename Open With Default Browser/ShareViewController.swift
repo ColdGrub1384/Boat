@@ -49,6 +49,9 @@ class ShareViewController: UIViewController {
             case kDolphin.urlScheme:
                 notificationContent.title = Localizable.openIn("Dolphin")
                 set(notification: notificationContent, icon: "dolphin.png")
+            case kEdge.urlScheme:
+                notificationContent.title = Localizable.openIn("Edge")
+                set(notification: notificationContent, icon: "edge.png")
             case kFirefox.urlScheme:
                 notificationContent.title = Localizable.openIn("Firefox")
                 set(notification: notificationContent, icon: "firefox.jpeg")

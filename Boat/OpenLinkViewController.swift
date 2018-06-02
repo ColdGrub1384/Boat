@@ -78,6 +78,9 @@ class OpenLinkViewController: UIViewController {
         case kDolphin.urlScheme: // Dolphin
             browserIcon = #imageLiteral(resourceName: "dolphin")
             browserName = "Dolphin"
+        case kEdge.urlScheme: // Edge
+            browserIcon = #imageLiteral(resourceName: "edge")
+            browserName = "Edge"
         case kFirefox.urlScheme: // Firefox
             browserIcon = #imageLiteral(resourceName: "firefox")
             browserName = "Firefox"

@@ -29,6 +29,7 @@
 		3AD435B320BF4E7900CD6044 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AD435AB20BF4E7200CD6044 /* Localizable.strings */; };
 		3AD435B720C0B82200CD6044 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD435B620C0B82200CD6044 /* Localizable.swift */; };
 		3AD7E32220C2ED56004CF54C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7E32420C2ED56004CF54C /* InfoPlist.strings */; };
+		3AD7E35320C30C17004CF54C /* edge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AD7E35220C30C17004CF54C /* edge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		3AD7E32B20C2ED72004CF54C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3AD7E32C20C2ED73004CF54C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3AD7E32D20C2ED75004CF54C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AD7E35220C30C17004CF54C /* edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				3A039A8820BB6B9100283761 /* dolphin.png */,
 				3A039A8620BB6B9100283761 /* firefox.jpeg */,
 				3A039A8920BB6B9100283761 /* opera.png */,
+				3AD7E35220C30C17004CF54C /* edge.png */,
 			);
 			path = "Browser Icons";
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD7E35320C30C17004CF54C /* edge.png in Resources */,
 				3A039A8C20BB6B9100283761 /* dolphin.png in Resources */,
 				3AD7E32220C2ED56004CF54C /* InfoPlist.strings in Resources */,
 				3AD435A920BF4E7200CD6044 /* Localizable.strings in Resources */,

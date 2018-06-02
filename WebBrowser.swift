@@ -47,6 +47,7 @@ func urlForDefaultBrowser(_ url: URL) -> URL {
 
 let kChrome = WebBrowser(urlScheme: URL(string: "googlechrome://")!, appStoreID: "535886823")
 let kDolphin = WebBrowser(urlScheme: URL(string: "dolphin://")!, appStoreID: "634693702")
+let kEdge = WebBrowser(urlScheme: URL(string: "microsoft-edge-http://")!, appStoreID: "1288723196")
 let kFirefox = WebBrowser(urlScheme: URL(string: "firefox://open-url?url=")!, appStoreID: "989804926")
 let kOpera = WebBrowser(urlScheme: URL(string: "opera-http://")!, appStoreID: "363729560")
 
@@ -64,6 +65,8 @@ var defaultBrowser: WebBrowser? {
                 return kFirefox
             case kOpera.urlScheme:
                 return kOpera
+            case kEdge.urlScheme:
+                return kEdge
             default:
                 break
             }

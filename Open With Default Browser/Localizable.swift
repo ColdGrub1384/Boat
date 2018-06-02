@@ -13,10 +13,14 @@ class Localizable {
     private init() {}
     
     /// `"Invalid URL!"`.
-    static let invalidURL = NSLocalizedString("Invalid URL!", comment: "")
+    static var invalidURL: String {
+        return NSLocalizedString("Invalid URL!", comment: "")
+    }
     
     /// `"Please enable notifications alerts from settings."`.
-    static let enableNotificationsAlert = NSLocalizedString("Please enable notifications alerts from settings.", comment: "")
+    static var enableNotificationsAlert: String {
+        return NSLocalizedString("Please enable notifications alerts from settings.", comment: "")
+    }
     
     /// `"Open in %@"`.
     static func openIn(_ browser: String) -> String {

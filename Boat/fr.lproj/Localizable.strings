@@ -10,3 +10,4 @@
 "Error opening URL!" = "Erreur lors de l'ouverture de l'URL!";
 "It looks like %@ is not installed." = "On dirait que %@ n'est pas installé.";
 "Open in %@" = "Ouvrir dans %@";
+"OK" = "OK";

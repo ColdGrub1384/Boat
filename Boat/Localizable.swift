@@ -13,14 +13,23 @@ class Localizable {
     private init() {}
     
     /// `"Default Web Browser"`.
-    static let defaultWebBrowser = NSLocalizedString("Default Web Browser", comment: "")
+    static var defaultWebBrowser: String {
+        return NSLocalizedString("Default Web Browser", comment: "")
+    }
     
     /// `"Error opening URL!"`.
-    static let errorOpeningURL = NSLocalizedString("Error opening URL!", comment: "")
+    static var errorOpeningURL: String {
+        return NSLocalizedString("Error opening URL!", comment: "")
+    }
+    
+    /// `"OK"`.
+    static var ok: String {
+        return NSLocalizedString("OK", comment: "")
+    }
         
     /// `"It looks like %@ is not installed."`.
     static func browserNotInstalled(_ browser: String) -> String {
-        return NSString(format: NSLocalizedString("Default Web Browser", comment: "") as NSString, browser) as String
+        return NSString(format: NSLocalizedString("It looks like %@ is not installed.", comment: "") as NSString, browser) as String
     }
     
     /// `"Open in %@"`.

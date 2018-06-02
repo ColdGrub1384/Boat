@@ -41,7 +41,7 @@ class OpenLinkViewController: UIViewController {
                     if !success {
                         (UIApplication.shared.keyWindow?.rootViewController as? ViewController)?.textField.text = url.absoluteString
                         let alert = UIAlertController(title: Localizable.errorOpeningURL, message: Localizable.browserNotInstalled(self.browserName), preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        alert.addAction(UIAlertAction(title: Localizable.ok, style: .default, handler: nil))
                         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
                     }
                 })

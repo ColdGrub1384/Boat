@@ -83,9 +83,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Table view data source
     
-    /// - Returns: `4`.
+    /// - Returns: `3`.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     /// - Returns: `"Default browser"`.
@@ -103,19 +103,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var browserIcon: UIImage?
         var browserName: String?
         switch indexPath.row {
-        case 0: // Chrome
+        case chromeIndexPath.row: // Chrome
             browser = kChrome
             browserIcon = #imageLiteral(resourceName: "chrome")
             browserName = "Chrome"
-        case 1: // Dolphin
+        case dolphinIndexPath.row: // Dolphin
             browser = kDolphin
             browserIcon = #imageLiteral(resourceName: "dolphin")
             browserName = "Dolphin"
-        case 2: // Firefox
+        case firefoxIndexPath.row: // Firefox
             browser = kFirefox
             browserIcon = #imageLiteral(resourceName: "firefox")
             browserName = "Firefox"
-        case 3: // Opera
+        case operaIndexPath.row: // Opera
             browser = kOpera
             browserIcon = #imageLiteral(resourceName: "opera")
             browserName = "Opera"

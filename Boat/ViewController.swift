@@ -65,10 +65,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if let url = URL(string: text), let scheme = url.scheme, scheme == "http" || scheme == "https" { // Is http or https URL
             openURL(url)
-        } else if let url = URL(string: text), UIApplication.shared.canOpenURL(url) {
+        } else if let url = URL(string: text), let scheme = url.scheme, scheme != "http" && scheme != "https" {
             UIApplication.shared.open(url, options: [:]) { (success) in
                 if success {
                     self.textField.text = ""
+                    self.goButton.isEnabled = false
                 }
             }
         } else if let url = URL(string: text), let urlWithScheme = URL(string: "http://"+text), (url.scheme == nil || url.scheme == "") && url.absoluteString.contains(".") { // Can be an URL with http or https

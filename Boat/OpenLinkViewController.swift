@@ -9,9 +9,10 @@
 import UIKit
 import SafariServices
 import GoogleMobileAds
+import WebKit
 
 /// View controller used to open an URL with the default browser.
-class OpenLinkViewController: UIViewController {
+class OpenLinkViewController: UIViewController, WKNavigationDelegate {
     
     /// http or https URL to open.
     var url: URL?
@@ -20,6 +21,15 @@ class OpenLinkViewController: UIViewController {
     
     /// Banner view placed at the bottom of `view`.
     var bannerView: GADBannerView!
+    
+    /// Title of the page.
+    @IBOutlet weak var pageTitle: UILabel!
+    
+    /// URL label.
+    @IBOutlet weak var pageURL: UILabel!
+    
+    /// Blurred Web view in background showing a preview of `url`.
+    @IBOutlet weak var backgroundWebView: WKWebView!
     
     /// Icon of the browser.
     @IBOutlet weak var iconView: UIImageView!
@@ -149,16 +159,11 @@ class OpenLinkViewController: UIViewController {
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBannerViewToView(bannerView)
         
-        bannerView.backgroundColor = .red
-        
         bannerView.adUnitID = "ca-app-pub-9214899206650515/2565783971"
         bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-    }
-    
-    /// Setup views.
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        let request = GADRequest()
+        request.testDevices = ["e644ed40542c60ee2132b81f3b6f8c80"]
+        bannerView.load(request)
         
         iconView.clipsToBounds = true
         iconView.layer.borderWidth = 0.5
@@ -191,5 +196,33 @@ class OpenLinkViewController: UIViewController {
         
         iconView.image = browserIcon
         openButton.setTitle(Localizable.openIn(browserName), for: .normal)
+        
+        if let url = url {
+            backgroundWebView.load(URLRequest(url: url))
+            backgroundWebView.navigationDelegate = self
+        }
+        
+        if var urlString = url?.absoluteString {
+            var urlComponents = urlString.components(separatedBy: "://")
+            urlComponents.removeFirst()
+            urlString = urlComponents.joined()
+            if urlString.hasPrefix("www.") {
+                urlString = urlString.components(separatedBy: "www.")[1]
+            }
+            pageURL.isHidden = false
+            pageURL.text = urlString
+        }
+    }
+    
+    // MARK: - Navigation delegate
+    
+    /// Get page title.
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.title") { (title, _) in
+            if let title = title as? String {
+                self.pageTitle.isHidden = false
+                self.pageTitle.text = title
+            }
+        }
     }
 }

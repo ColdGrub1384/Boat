@@ -19,7 +19,6 @@
 		3A039A8C20BB6B9100283761 /* dolphin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8820BB6B9100283761 /* dolphin.png */; };
 		3A039A8D20BB6B9100283761 /* opera.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8920BB6B9100283761 /* opera.png */; };
 		3A039AA820BE270700283761 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A039AAA20BE270700283761 /* Localizable.strings */; };
-		3A0FF81920C490CC004DB236 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FF81820C490CC004DB236 /* AdSupport.framework */; };
 		3A8791B220B38E4100941CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791B120B38E4100941CEB /* AppDelegate.swift */; };
 		3A8791B420B38E4100941CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791B320B38E4100941CEB /* ViewController.swift */; };
 		3A8791B720B38E4100941CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8791B520B38E4100941CEB /* Main.storyboard */; };
@@ -153,7 +152,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A0FF81920C490CC004DB236 /* AdSupport.framework in Frameworks */,
 				821EBA6A3160A618A63CE7D0 /* Pods_Open_With_Default_Browser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,14 +14,14 @@
 /* Class = "UITextField"; placeholder = "Search with Google or enter an URL"; ObjectID = "Zle-xr-KXZ"; */
 "Zle-xr-KXZ.placeholder" = "Rechercher ou entrer une URL";
 
-/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "yoM-Tl-cZL"; */
-"yoM-Tl-cZL.normalTitle" = "Ouvrir dans";
+/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "q5B-8K-GdA"; */
+"q5B-8K-GdA.normalTitle" = "Ouvrir dans";
 
-/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zgd-W2-Efn"; */
-"zgd-W2-Efn.normalTitle" = "Annuler";
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "x3g-Ds-aqS"; */
+"x3g-Ds-aqS.normalTitle" = "Annuler";
 
-/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "sGO-mn-Pye"; */
-"sGO-mn-Pye.normalTitle" = "Partager";
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "ou8-gB-ZPX"; */
+"ou8-gB-ZPX.normalTitle" = "Partager";
 
-/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "1qv-eu-Ks3"; */
-"1qv-eu-Ks3.normalTitle" = "Ouvrir dans";
+/* Class = "UIButton"; normalTitle = "Open in"; ObjectID = "TO9-8r-Qga"; */
+"TO9-8r-Qga.normalTitle" = "Ouvrir dans";

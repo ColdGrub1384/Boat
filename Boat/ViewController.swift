@@ -50,12 +50,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         func openURL(_ url: URL) {
+            textField.text = ""
+            goButton.isEnabled = false
+            
             if defaultBrowser != nil {
-                textField.text = ""
                 openLinkViewController.url = url
                 present(openLinkViewController, animated: true, completion: nil)
             } else {
-                textField.text = ""
                 let safari = SFSafariViewController(url: url)
                 safari.dismissButtonStyle = .done
                 present(safari, animated: true, completion: nil)

@@ -122,6 +122,7 @@ class OpenLinkViewController: UIViewController, WKNavigationDelegate {
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: {
             (UIApplication.shared.keyWindow?.rootViewController as? ViewController)?.textField.text = self.url?.absoluteString
+            (UIApplication.shared.keyWindow?.rootViewController as? ViewController)?.goButton.isEnabled = true
         })
     }
     

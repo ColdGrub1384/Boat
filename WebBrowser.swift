@@ -80,3 +80,4 @@ var defaultBrowser: WebBrowser? {
         UserDefaults(suiteName: "group.Boat")?.synchronize()
     }
 }
+

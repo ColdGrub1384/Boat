@@ -12,7 +12,7 @@ import GoogleMobileAds
 import WebKit
 
 /// View controller used to open an URL with the default browser.
-class OpenLinkViewController: UIViewController, WKNavigationDelegate {
+class OpenLinkViewController: UIViewController, WKNavigationDelegate, GADBannerViewDelegate {
     
     /// http or https URL to open.
     var url: URL?
@@ -153,7 +153,7 @@ class OpenLinkViewController: UIViewController, WKNavigationDelegate {
     
     // MARK: - View controller
     
-    /// Show ad.
+    /// Show ad and setup views.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -162,9 +162,8 @@ class OpenLinkViewController: UIViewController, WKNavigationDelegate {
         
         bannerView.adUnitID = "ca-app-pub-9214899206650515/2565783971"
         bannerView.rootViewController = self
-        let request = GADRequest()
-        request.testDevices = ["e644ed40542c60ee2132b81f3b6f8c80"]
-        bannerView.load(request)
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
         
         iconView.clipsToBounds = true
         iconView.layer.borderWidth = 0.5
@@ -225,5 +224,12 @@ class OpenLinkViewController: UIViewController, WKNavigationDelegate {
                 self.pageTitle.text = title
             }
         }
+    }
+    
+    // MARK: - Banner view delegate
+    
+    /// Print error.
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error.localizedDescription)
     }
 }

@@ -200,15 +200,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let url = browser?.urlScheme {
             if !UIApplication.shared.canOpenURL(url) {
                 // App Store
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 let appStore = SKStoreProductViewController()
                 appStore.delegate = self
-                appStore.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier:browser?.appStoreID ?? ""]) { (loaded, _) in
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    if loaded {
-                        self.present(appStore, animated: true, completion: nil)
-                    }
-                }
+                appStore.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier:browser?.appStoreID ?? ""], completionBlock: nil)
+                self.present(appStore, animated: true, completion: nil)
             } else {
                 // Set default browser
                 defaultBrowser = WebBrowser(urlScheme: url, appStoreID: "")

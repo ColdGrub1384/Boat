@@ -153,17 +153,15 @@ class OpenLinkViewController: UIViewController, WKNavigationDelegate, GADBannerV
     
     // MARK: - View controller
     
-    /// Show ad and setup views.
+    /// Load ad and setup views.
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBannerViewToView(bannerView)
-        
-        bannerView.adUnitID = "ca-app-pub-9214899206650515/2565783971"
         bannerView.rootViewController = self
-        bannerView.load(GADRequest())
+        bannerView.adUnitID = "ca-app-pub-9214899206650515/2565783971"
         bannerView.delegate = self
+        bannerView.load(GADRequest())
         
         iconView.clipsToBounds = true
         iconView.layer.borderWidth = 0.5
@@ -227,6 +225,11 @@ class OpenLinkViewController: UIViewController, WKNavigationDelegate, GADBannerV
     }
     
     // MARK: - Banner view delegate
+    
+    /// Show ad.
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+    }
     
     /// Print error.
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {

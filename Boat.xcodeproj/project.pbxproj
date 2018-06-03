@@ -19,6 +19,7 @@
 		3A039A8C20BB6B9100283761 /* dolphin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8820BB6B9100283761 /* dolphin.png */; };
 		3A039A8D20BB6B9100283761 /* opera.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A039A8920BB6B9100283761 /* opera.png */; };
 		3A039AA820BE270700283761 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A039AAA20BE270700283761 /* Localizable.strings */; };
+		3A0FF81920C490CC004DB236 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FF81820C490CC004DB236 /* AdSupport.framework */; };
 		3A8791B220B38E4100941CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791B120B38E4100941CEB /* AppDelegate.swift */; };
 		3A8791B420B38E4100941CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8791B320B38E4100941CEB /* ViewController.swift */; };
 		3A8791B720B38E4100941CEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8791B520B38E4100941CEB /* Main.storyboard */; };
@@ -108,6 +109,7 @@
 		3A039AB520BE275D00283761 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3A039AB620BE275E00283761 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A039AB720BE275F00283761 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A0FF81820C490CC004DB236 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		3A8791AE20B38E4100941CEB /* Boat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8791B120B38E4100941CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A8791B320B38E4100941CEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0FF81920C490CC004DB236 /* AdSupport.framework in Frameworks */,
 				821EBA6A3160A618A63CE7D0 /* Pods_Open_With_Default_Browser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +172,7 @@
 		3A039A4720BB50A500283761 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A0FF81820C490CC004DB236 /* AdSupport.framework */,
 				C71ECB2A4A3BA2F0850814F9 /* Pods_Boat.framework */,
 				34CCA1BC930BC5635F8D17F1 /* Pods_Open_With_Default_Browser.framework */,
 			);
